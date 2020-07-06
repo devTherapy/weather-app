@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname, "../Template/views");
 const partialsPath = path.join(__dirname, "../Template/partials");
 hbs.registerPartials(partialsPath);
 const app = express();
+const port = process.env.PORT || 3000;
 //serving up static assets
 app.use(express.static(publicPathDirectory));
 //setting up handlebars and views location
@@ -81,6 +82,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server is running on port 3000");
+app.listen(port, () => {
+  console.log(`server is running on port ${port}`);
 });

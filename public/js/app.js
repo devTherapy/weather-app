@@ -9,9 +9,7 @@ form.addEventListener("submit", (event) => {
 });
 async function getForecast(location) {
   try {
-    let response = await fetch(
-      `http://localhost:3000/weather?address=${location}`
-    );
+    let response = await fetch(`/weather?address=${location}`);
     let data = await response.json();
     if (data.error) {
       msgOne.classList.remove("green");
